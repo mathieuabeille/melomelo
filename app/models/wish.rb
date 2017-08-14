@@ -1,0 +1,3 @@
+class Wish < ApplicationRecord
+
+end
