@@ -12,9 +12,20 @@
 }
 
 /* Logo */
-.navbar-wagon-brand img {
+.navbar-wagon-brand {
+  color: $orange;
+  font-size: 40px;
+  .title {
+  padding-top: 5px;}
+  img {
   height: 50px;
+  }
 }
+.navbar-wagon-brand:hover {
+  text-decoration: none;
+  color: $orange;
+}
+
 
 /* User Avatar */
 .navbar-wagon .avatar {
@@ -40,6 +51,7 @@
 .navbar-wagon-link {
   color: $orange;
   font-size: 14px;
+
 }
 .navbar-wagon-link:hover {
   color: #da552f;
@@ -55,14 +67,14 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: $orange !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: #da552f !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
