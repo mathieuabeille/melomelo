@@ -1,1 +1,57 @@
-// Specific CSS for your home-page
+.pages.home {
+  form {
+    display: flex;
+
+    .search-input {
+      flex-grow: 1;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    .form-group {
+      padding: 0px 3px;
+    }
+  }
+
+  .banner-content {
+    width: 70%;
+  }
+
+  .text-content h1 {
+    padding-bottom: 50px;
+    text-align: left;
+    text-shadow: 0.5px 0.5px 0.5px;
+    font-size: 60px;
+  }
+}
+
+// Small screen
+@media (max-width: $screen-md-min) {
+  .pages.home {
+    form {
+      display: block;
+
+      input, button {
+        width: 100%;
+      }
+
+      .form-group {
+        padding: 0px 5px;
+      }
+    }
+
+    .banner-content {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .text-content h1 {
+      padding-bottom: 40px;
+      text-align: center;
+      text-shadow: 0.5px 0.5px 0.5px;
+      font-size: 40px;
+    }
+  }
+}
