@@ -1,37 +1,100 @@
-.card-fond{
-  background: white;
+
+  .alignement{
+    form {
+    display: flex;
+    padding: 5px;
+    width:100%;
+
+    .form-group-index {
+      padding: 0px 3px;
+    }
+
+    }
+
+    .search-case-index{
+      display: inline-block;
+      border-radius: 5px;
+      vertical-align: middle;
+      height: 39px;
+      padding: 6px 12px;
+      font-size: 18px;
+      line-height: 1.428571429;
+      color: #000000;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+
+    }
+  }
+
+
+.filter-bar{
+  height:50px;
+  background: #F4F4F;
   padding: 5px;
-  border-radius: 4px;
+  box-shadow: none;
+  border: none;
+  margin: 5px 0px;
+}
+
+.dollar{
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.your-board{
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.selection{
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  position:relative;
-  margin-bottom: 15px;
+  padding: 20px;
+  height: 1200px;
+  border-radius: 5px;
 }
 
-.card-description {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 45px;
+#title-box{
+  color: #FF9900;
 }
 
-.card_image {
-  margin:5px 5px;
-  height: 220px;
-  background-size: cover;
-  border-radius: 4px;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-
-  h4{
-    color:white;
-    text-align: center;
-  }
-
-  p {
-    color:white;
-    text-align: center;
-    padding: 0;
-  }
+.card-fond{
+  // background: white;
+  // padding: 5px;
+  // border-radius: 4px;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  // position:relative;
+  // margin-bottom: 15px;
+  // height:300px;
 }
+
+
+.card_image{
+//   margin:5px 5px;
+//   height: 220px;
+//   background-size: cover;
+//   border-radius: 4px;
+//   align-items: center;
+//   justify-content: center;
+}
+
+.card-category{
+  // display: flex;
+}
+
+.card-description{
+  // margin: none;
+  // position: absolute;
+  // bottom: 1px;
+  // padding: none;
+
+  // p{
+  //   margin: none;
+  //   padding: none;
+  // }
+}
+
