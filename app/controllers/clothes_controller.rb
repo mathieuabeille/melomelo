@@ -1,5 +1,5 @@
 class ClothesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :destroy]
 
   def index
     @clothes = Cloth.all

@@ -1,71 +1,87 @@
+User.destroy_all
 Cloth.destroy_all
 
-clothes_attributes = [
-  {
-    name: "Embroid T-Shirt",
-    description: "embroid",
-    size: "M",
-    price: 20,
-    color: "white",
-    brand: "ZARA",
-    material: "cotton",
-  },
+user = User.create!(
+  email: "example@gmail.com",
+  password: "password",
+  first_name: "John",
+  last_name: "Doe"
+)
 
-  {
-    name: "Embroid T-Shirt",
-    description: "rose",
-    size: "M",
-    price: 15,
-    color: "Beige",
-    brand: "H&M",
-    material: "cotton",
-  },
+cloth = Cloth.create!(
+  name: "Embroid T-Shirt",
+  description: "embroid",
+  size: "M",
+  price: 20,
+  color: "white",
+  brand: "ZARA",
+  material: "cotton",
+)
 
-  {
-    name: "T-Shirt",
-    description: "embroid",
-    size: "M",
-    price: 30,
-    color: "Beige",
-    brand: "ASOS",
-    material: "polyester",
-  },
+Basket.create!(
+  user: user,
+  cloth: cloth
+)
 
-  {
-    name: "T-Shirt",
-    description: "embroid",
-    size: "M",
-    price:40,
-    color: "Beige",
-    brand: "AMAZON",
-    material: "cotton",
-  },
 
-  {
-    name: "T-Shirt",
-    description: "embroid",
-    size: "M",
-    price:20,
-    color: "white",
-    brand: "AMAZON",
-    material: "polyester",
+cloth = Cloth.create!(
+  name: "Embroid T-Shirt",
+  description: "rose",
+  size: "M",
+  price: 15,
+  color: "Beige",
+  brand: "H&M",
+  material: "cotton",
+)
 
-  },
+Basket.create!(
+  user: user,
+  cloth: cloth
+)
 
-  {
-    name: "T-Shirt",
-    description: "embroid",
-    size: "M",
-    price:40,
-    color: "black",
-    brand: "ASOS",
-    material: "cotton",
+cloth = Cloth.create!(
+  name: "T-Shirt",
+  description: "embroid",
+  size: "M",
+  price: 30,
+  color: "Beige",
+  brand: "ASOS",
+  material: "polyester",
+)
 
-  }
-]
+cloth = Cloth.create!(
+  name: "T-Shirt",
+  description: "embroid",
+  size: "M",
+  price:40,
+  color: "Beige",
+  brand: "AMAZON",
+  material: "cotton",
+)
 
-puts "Creating Clothes"
-Cloth.create!(clothes_attributes)
+cloth = Cloth.create!(
+  name: "T-Shirt",
+  description: "embroid",
+  size: "M",
+  price:20,
+  color: "white",
+  brand: "AMAZON",
+  material: "polyester",
+)
+
+cloth = Cloth.create!(
+  name: "T-Shirt",
+  description: "embroid",
+  size: "M",
+  price:40,
+  color: "black",
+  brand: "ASOS",
+  material: "cotton",
+)
+
+puts "Everything done"
+
+
 
 
 

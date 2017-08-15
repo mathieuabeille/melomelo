@@ -10,15 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+ActiveRecord::Schema.define(version: 20170815150538) do
+
 ActiveRecord::Schema.define(version: 20170815160907) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "baskets", force: :cascade do |t|
-    t.integer "clothe_id"
     t.integer "user_id"
-    t.index ["clothe_id"], name: "index_baskets_on_clothe_id", using: :btree
+    t.integer "cloth_id"
+    t.index ["cloth_id"], name: "index_baskets_on_cloth_id", using: :btree
     t.index ["user_id"], name: "index_baskets_on_user_id", using: :btree
   end
 
@@ -53,6 +57,11 @@ ActiveRecord::Schema.define(version: 20170815160907) do
     t.string   "size",                   default: [],              array: true
     t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "facebook_picture_url"
+    t.string   "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -63,7 +72,6 @@ ActiveRecord::Schema.define(version: 20170815160907) do
     t.index ["user_id"], name: "index_wishes_on_user_id", using: :btree
   end
 
-  add_foreign_key "baskets", "clothes"
   add_foreign_key "baskets", "users"
   add_foreign_key "wishes", "users"
 end
