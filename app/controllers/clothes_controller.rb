@@ -4,4 +4,9 @@ class ClothesController < ApplicationController
   def index
     @clothes = Cloth.all
   end
+
+  # def create
+  # faut-il créer une methode???
+  # end
+
 end
