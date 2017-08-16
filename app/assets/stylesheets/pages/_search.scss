@@ -1,27 +1,42 @@
-
-  .alignement{
+.clothes.index {
+  .alignement {
     form {
-    display: flex;
-    padding: 5px;
-    width:100%;
+      display: flex;
+      padding: 5px;
+      width:100%;
 
-    .form-group-index {
-      display: inline-block;
-      border-radius: 5px;
-      vertical-align: middle;
-      height: 49px;
-      padding: 6px 12px;
-      font-size: 18px;
-      line-height: 1.428571429;
-      color: #000000;
-      background-color: #fff;
-      background-image: none;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 90%;
-      margin: 0px 30px;
-    }
+      .form-group {
+        width: 100%;
+        padding-top:10px;
+      }
 
+      .form-control {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      .input-group{
+        width:100%;
+      }
+
+      .input-group-addon{
+        color: #000000;
+        background-color: #fff;
+        background-image: none;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width:50px;
+      }
+
+      .radius-left{
+        // border-top-left-radius: 10px;
+        // border-bottom-left-radius: 10px;
+      }
+
+      .radius-right{
+        // border-top-right-radius: 10px;
+        // border-bottom-right-radius: 10px;
+      }
     }
 
     .s-i{
@@ -54,74 +69,115 @@
     }
   }
 
+  .filter-bar{
+    height:50px;
+    background: #F4F4F;
+    padding: 5px;
+    box-shadow: none;
+    border: none;
+    margin: 5px 0px 15px 0px;
+    display:flex;
+  }
 
-.filter-bar{
-  height:50px;
-  background: #F4F4F;
-  padding: 5px;
-  box-shadow: none;
-  border: none;
-  margin: 5px 0px;
+  .btn-default{
+    // border-bottom-right-radius: 10px;
+    // border-top-right-radius: 10px;
+    // border-bottom-left-radius: 10px;
+    // border-top-left-radius: 10px;
+  }
+
+
+  .dollar{
+    margin:0px 20px 0px 0px;
+    color: #FF9900;
+  }
+
+  .croissant{
+    margin-right: 20px;
+  }
+
+  .sizes{
+    margin-right: 20px;
+  }
+
+
+  .inexpensive{
+    padding: 0px 8px
+  }
+
+  .middle{
+    padding: 0px 0px 0px 8px
+  }
+
+
+  .your-board{
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .selection{
+    padding: 0px 20px 20px;
+    border-radius: 5px;
+  }
+
+
+  #title-box{
+    color: #FF9900;
+  }
+
+  .card-fond{
+    // background: white;
+    // padding: 5px;
+    // border-radius: 4px;
+    // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    // border: 1px solid rgba(0, 0, 0, 0.1);
+    // position:relative;
+    // margin-bottom: 15px;
+    // height:300px;
+  }
+
+
+  .card_image{
+  //   margin:5px 5px;
+  //   height: 220px;
+  //   background-size: cover;
+  //   border-radius: 4px;
+  //   align-items: center;
+  //   justify-content: center;
+  }
+
+  .card-category{
+    // display: flex;
+  }
+
+  .card-description{
+    // margin: none;
+    // position: absolute;
+    // bottom: 1px;
+    // padding: none;
+
+    // p{
+    //   margin: none;
+    //   padding: none;
+    // }
+  }
 }
 
-.dollar{
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  margin: 0px 30px;
+.btn-group button:first-of-type {
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+.btn-group button:last-of-type {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
-
-.your-board{
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.selection{
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  height: 1200px;
-  border-radius: 5px;
-}
-
-#title-box{
-  color: #FF9900;
-}
-
-.card-fond{
-  // background: white;
-  // padding: 5px;
-  // border-radius: 4px;
-  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  // border: 1px solid rgba(0, 0, 0, 0.1);
-  // position:relative;
-  // margin-bottom: 15px;
-  // height:300px;
-}
-
-
-.card_image{
-//   margin:5px 5px;
-//   height: 220px;
-//   background-size: cover;
-//   border-radius: 4px;
-//   align-items: center;
-//   justify-content: center;
-}
-
-.card-category{
-  // display: flex;
-}
-
-.card-description{
-  // margin: none;
-  // position: absolute;
-  // bottom: 1px;
-  // padding: none;
-
-  // p{
-  //   margin: none;
-  //   padding: none;
-  // }
-}
-
