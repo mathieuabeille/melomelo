@@ -8,38 +8,29 @@
         <div class="stage-bk-det">
           <div class="card-back">
               <div class="card-image" style="background-image: url('<%= image_path 'example.jpg' %>');">
-                  <div>
-                    <h4><%= basket.cloth.price %>$</h4>
-                    <p></p>
-                  </div>
+                <%= link_to basket_path(basket), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                 <div class="delete"> <%= icon("trash") %></div>
+                <% end %>
+                <div class="price"> <%= basket.cloth.price %>$</p></div>
               </div>
 
             <div class="card-informations">
               <h3><%= basket.cloth.name %> - <%= basket.cloth.brand %> - <%= basket.cloth.sizes %></h3>
-              <p><%= basket.cloth.description %></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium voluptas praesentium totam tempora earum magni rerum laboriosam mollitia debitis.</p>
             </div>
           </div>
         </div>
-        <%= link_to basket_path(basket), method: :delete, data: { confirm: 'Are you sure?' } do %>
-        <%= icon("trash") %> Delete
-      </div>
 
-      <% end %>
+      </div>
     <% end %>
 
       <div class="col-sm-4 col-md-3 col-xs-12">
         <div class="stage-bk-det">
           <div class="card-back">
-              <div class="card-image">
-                  <div>
-                    <h4><center>Add item</center></h4>
-                    <p><center><i class="fa fa-plus" aria-hidden="true"></i></center></p>
-                  </div>
-              </div>
-
-            <div class="card-informations">
-              <h1><center><i class="fa fa-plus-circle" aria-hidden="true"></i></center></h1>
-              <p></p>
+            <div class="card-image">
+                <div class="crux">
+                  <p><center><i class="fa fa-plus" aria-hidden="true"></i></center></p>
+                </div>
             </div>
           </div>
         </div>
