@@ -6,12 +6,25 @@
     width:100%;
 
     .form-group-index {
-      padding: 0px 3px;
+      display: inline-block;
+      border-radius: 5px;
+      vertical-align: middle;
+      height: 49px;
+      padding: 6px 12px;
+      font-size: 18px;
+      line-height: 1.428571429;
+      color: #000000;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 90%;
+      margin: 0px 30px;
     }
 
     }
 
-    .search-case-index{
+    .s-i{
       display: inline-block;
       border-radius: 5px;
       vertical-align: middle;
@@ -22,9 +35,22 @@
       color: #000000;
       background-color: #fff;
       background-image: none;
+      border: none;
+      width: 90%;
       border: 1px solid #ccc;
       border-radius: 5px;
+    }
 
+    .loupe{
+      background-color: #fff;
+      background-image: none;
+      border:none;
+    }
+
+    .submit{
+      background-color: #fff;
+      background-image: none;
+      border:none;
     }
   }
 
@@ -42,6 +68,7 @@
   display: flex;
   border: 1px solid #ccc;
   border-radius: 15px;
+  margin: 0px 30px;
 }
 
 .your-board{
