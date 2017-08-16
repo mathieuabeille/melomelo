@@ -111,6 +111,7 @@
 .card-back {
   position: relative;
   overflow: hidden;
+  height: 200px;
 }
 
 .card-back:hover .card-informations {
@@ -125,7 +126,7 @@
 
 .card-informations {
   position: absolute;
-  top: 160px;
+  top: 175px;
   transition: all ease 0.5s;
   background-color: white;
   width: 100%;

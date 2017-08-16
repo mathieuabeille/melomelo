@@ -14,5 +14,10 @@ class BasketsController < ApplicationController
 
   # POST /clothes/:clothe_id/baskets
   def create
+    @basket = Basket.new
+    @cloth = Cloth.find(params[:id])
+    @basket.cloth = @cloth
+    @basket.user = current_user
+    @basket.save
   end
 end

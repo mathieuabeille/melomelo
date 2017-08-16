@@ -5,3 +5,47 @@
     color: $orange;
   }
 }
+
+.delete {
+  position: absolute;
+  top : 2px;
+  right : 10px;
+  font-size: 25px;
+  color: $orange;
+  text-align: right;
+}
+
+.delete:hover {
+  color: $orange;
+  opacity: 0.6;
+  text-align: right;
+}
+
+.crux {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 30px;
+  font-size: 50px;
+  color: $orange;
+  text-align: right;
+}
+
+.crux:hover {
+  color: $orange;
+  transition: all ease 0.5s;
+  font-size: 70px;
+  opacity: 0.6;
+  text-align: right;
+}
+
+.price {
+  position: absolute;
+  top : 10px;
+  left : 10px;
+  font-size: 18px;
+  color: $orange;
+  text-align: right;
+}
