@@ -1,5 +1,5 @@
 .card {
-  height: 175px;
+  height: 375px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -10,7 +10,7 @@
 }
 
 .card-image {
-  height: 175px;
+  height: 450px;
 }
 
 .stage-bk-det {
@@ -80,7 +80,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 45px
+  height: 45px;
+
 
 }
 .card-description h2 {
@@ -110,11 +111,11 @@
 .card-back {
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 450px;
 }
 
 .card-back:hover .card-informations {
-  top: 100px;
+  top: 315px;
 }
 
 .card-image {
@@ -125,7 +126,7 @@
 
 .card-informations {
   position: absolute;
-  top: 175px;
+  top: 410px;
   transition: all ease 0.5s;
   background-color: white;
   width: 100%;
