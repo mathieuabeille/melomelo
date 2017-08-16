@@ -7,7 +7,7 @@
       <div class="col-sm-4 col-md-3 col-xs-12">
         <div class="stage-bk-det">
           <div class="card-back">
-              <div class="card-image" style="background-image: url('<%= image_path 'example.jpg' %>');">
+              <div class="card-image" style="background-image: url('http://<%= basket.cloth.images_urls.first %>');">
                 <%= link_to basket_path(basket), method: :delete, data: { confirm: 'Are you sure?' } do %>
                  <div class="delete"> <%= icon("trash") %></div>
                 <% end %>

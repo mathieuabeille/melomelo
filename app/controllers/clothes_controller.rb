@@ -3,6 +3,7 @@ class ClothesController < ApplicationController
 
   def index
     @clothes = Cloth.all
+    @baskets = current_user.baskets
   end
 
   # def create
