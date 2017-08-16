@@ -4,17 +4,42 @@ class AsosScraper
   include ActionView::Helpers::SanitizeHelper
 
   def run
-    # 1. Get all product ids
-    product_ids.each do |id|
-      create_product_from(id)
+    puts "Getting categories link"
+    item_links.each do |category_url|
+
+      puts "Getting products ids for #{category_url}"
+      product_ids = product_ids_for_category(category_url)
+
+      product_ids.each do |id|
+        if !Cloth.exists?(provider_id: id)
+          create_product_from(id)
+        end
+      end
     end
-    # 2. For each product id, call api to get more information about this product
   end
 
   private
 
+  def item_links
+    response = RestClient.get("http://www.asos.fr/homme/")
+    doc_link = Nokogiri::HTML(response)
+
+    doc_link.search('ul.items li a').map do |link|
+      link['href']
+    end
+  end
+
+  def product_ids_for_category(category_url)
+    response = RestClient.get(category_url)
+    doc = Nokogiri::HTML(response)
+
+    doc.search('li.product-container').map do |product|
+      product['data-productid']
+    end
+  end
+
   def product_ids
-    response = RestClient.get("http://www.asos.fr/homme/polos/cat/?cid=4616&setPrefSite=true&r=1&mk=na")
+    response = RestClient.get("http://www.asos.fr/homme/polos/cat/?cid=4616&pgesize=204")
     doc = Nokogiri::HTML(response)
 
     doc.search('li.product-container').map do |product|
@@ -23,6 +48,7 @@ class AsosScraper
   end
 
   def create_product_from(id)
+    puts "Creating product from http://www.asos.fr/api/product/catalogue/v2/products/#{id}?store=US&currency=EUR"
     # Make an HTTP resquest to API
     response = RestClient.get("http://www.asos.fr/api/product/catalogue/v2/products/#{id}?store=US&currency=EUR")
 
@@ -36,7 +62,7 @@ class AsosScraper
       color: response["media"]["images"][0]["colour"],
       price: response["price"]["current"]["value"],
       brand: response["brand"]["name"],
-      material: response['info']['aboutMe'].split(':')[1].split(', ').map { |elem| elem.gsub('.', '').strip },
+      material: extract_material_from(response),
       images_urls: response["media"]["images"].map { |images| images['url'] },
       gender: response["gender"],
       tags: strip_tags(response["description"]).split('   ')[0..-2],
@@ -49,5 +75,15 @@ class AsosScraper
 
   def extract_sizes_from(response)
     response['variants'].map { |variant| variant['brandSize'] }
+  end
+
+  def extract_material_from(response)
+    materials = response['info']['aboutMe']&.split(':')
+
+    if materials && materials.count > 1
+      materials[1].split(', ').map { |elem| elem.gsub('.', '').strip }
+    else
+      []
+    end
   end
 end
