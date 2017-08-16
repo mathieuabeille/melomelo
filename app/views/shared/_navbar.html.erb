@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Search", "cloathes", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Search", "clothes", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Board", "baskets", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Wishlist", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
@@ -52,14 +52,14 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
          <% if user_signed_in? %>
 
-          <li><%= link_to "Search", "cloathes", class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Search", "clothes", class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "Board", "baskets", class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "Wishlist", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
               <% end %></li>
          <% else %>
-          <li><%= link_to "Search", "cloathes", class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Search", "clothes", class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
          <% end %>
 

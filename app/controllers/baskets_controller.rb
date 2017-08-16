@@ -7,6 +7,9 @@ class BasketsController < ApplicationController
 
   # DELETE /baskets/:id
   def destroy
+    @basket = Basket.find(params[:id])
+    @basket.destroy
+    redirect_to baskets_path
   end
 
   # POST /clothes/:clothe_id/baskets
