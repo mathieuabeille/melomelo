@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 
   <div class="alignement">
     <form class="form-inline">
@@ -51,10 +51,13 @@
           <span class="sr-only">Toggle Dropdown</span>
         </button>
         <ul class="dropdown-menu">
+          <li><a href="#">Black</a></li>
           <li><a href="#">Blue</a></li>
+          <li><a href="#">Orange</a></li>
+          <li><a href="#">Pink</a></li>
+          <li><a href="#">Purple</a></li>
           <li><a href="#">Red</a></li>
           <li><a href="#">Yellow</a></li>
-          <li><a href="#">Black</a></li>
           <li><a href="#">White</a></li>
         </ul>
       </div>
@@ -69,6 +72,9 @@
             <div class="stage-bk-det">
               <div class="card-back">
                   <div class="card-image" style="background-image: url('http://<%= cloth.images_urls.first %>');">
+                  <%= link_to clothe_baskets_path(cloth), method: :post, data: {confirm: 'Add to basket?'} do %>
+                  <div class="delete"><%= icon("heart")%></div>
+                  <% end %>
                     <div class="price"> <%= cloth.price %>$</div>
                   </div>
 
@@ -91,7 +97,7 @@
         <div class="your-board" id="title-box">
           <div class="row">
             <p>Your Selection</p>
-            <% @clothes.sample(23).each do |cloth| %>
+            <% @clothes.sample(7).each do |cloth| %>
               <div class="col-xs-12">
                 <div class="stage-bk-det">
                   <div class="card-back">
