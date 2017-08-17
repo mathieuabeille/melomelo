@@ -3,11 +3,14 @@ namespace :scrap do
   task asos: :environment do
     AsosScraper.new.run
   end
-end
 
-namespace :scrap do
   desc "Scrap H&M products"
-  task handm: :environment do
-    HandmScraper.new.run
+  task handmmen: :environment do
+    HandmmenScraper.new.run
+  end
+
+  desc "Scrap H&M products"
+  task handmwomen: :environment do
+    HandmwomenScraper.new.run
   end
 end
