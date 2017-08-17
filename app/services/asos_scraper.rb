@@ -1,5 +1,5 @@
 require 'json'
-
+#rails scrap:asos
 class AsosScraper
   include ActionView::Helpers::SanitizeHelper
 

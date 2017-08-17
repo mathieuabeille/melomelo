@@ -87,7 +87,9 @@
                 </div>
               </div>
             </div>
-
+            # <%= link_to clothe_baskets_path(cloth), method: :post,  data: { confirm: 'Are you sure?' } do %>
+                 <div> <%= icon("add") %>test</div>
+                <% end %>
           </div>
         <% end %>
       </div>
@@ -98,6 +100,7 @@
         <div class="your-board" id="title-box">
           <div class="row">
             <p>Your Selection</p>
+
             <% @clothes.sample(7).each do |cloth| %>
               <div class="col-xs-12">
                 <div class="stage-bk-det-board">
@@ -111,7 +114,16 @@
                   </div>
                 </div>
               </div>
-            <% end %>
+
+            <div class="card-informations">
+              <h3><%= basket.cloth.name %> - <%= basket.cloth.brand %> - <%= basket.cloth.sizes %></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium voluptas praesentium totam tempora earum magni rerum laboriosam mollitia debitis.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
           </div>
         </div>
       </div>
