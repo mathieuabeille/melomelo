@@ -87,6 +87,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         <% end %>
       </div>
@@ -97,30 +98,20 @@
         <div class="your-board" id="title-box">
           <div class="row">
             <p>Your Selection</p>
-
-            <% @clothes.sample(7).each do |cloth| %>
+            <% @baskets.each do |basket| %>
               <div class="col-xs-12">
                 <div class="stage-bk-det-board">
                   <div class="card-back-board">
-                    <div class="card-image-board" style="background-image: url('http://<%= cloth.images_urls.first %>');">
+                    <div class="card-image-board" style="background-image: url('http://<%= basket.cloth.images_urls.first %>');">
                     </div>
 
                     <div class="card-informations-board">
-                      <h6><%= cloth.name %> <br/> <%= cloth.brand %> <br/> <%= cloth.price %>$</h6>
+                      <h6><%= basket.cloth.name %> <br/> <%= basket.cloth.brand %> <br/> <%= basket.cloth.price %>$</h6>
                     </div>
                   </div>
                 </div>
               </div>
-
-            <div class="card-informations">
-              <h3><%= basket.cloth.name %> - <%= basket.cloth.brand %> - <%= basket.cloth.sizes %></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium voluptas praesentium totam tempora earum magni rerum laboriosam mollitia debitis.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    <% end %>
+            <% end %>
           </div>
         </div>
       </div>
