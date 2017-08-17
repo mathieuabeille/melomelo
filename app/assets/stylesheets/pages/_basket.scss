@@ -1,9 +1,17 @@
-.header-booking {
+.header-basket {
   height: 150px;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), image-url('bannerpic.jpeg');
   h1 {
     color: $orange;
   }
+}
+
+.box-basket {
+  background-color: white;
+  width: 97%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  margin: auto;
+  min-height: 75vh;
 }
 
 .delete {

@@ -10,6 +10,8 @@ class BasketsController < ApplicationController
     @basket = Basket.find(params[:id])
     @basket.destroy
     redirect_to baskets_path
+
+
   end
 
   # POST /clothes/:clothe_id/baskets
@@ -19,5 +21,6 @@ class BasketsController < ApplicationController
     @basket.cloth = @cloth
     @basket.user = current_user
     @basket.save
+    redirect_to clothes_path
   end
 end
