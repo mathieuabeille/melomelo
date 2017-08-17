@@ -69,6 +69,12 @@
     }
   }
 
+  .cadre{
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
   .filter-bar{
     height:50px;
     background: #F4F4F;
@@ -100,6 +106,10 @@
     margin-right: 20px;
   }
 
+  .sexe{
+    margin-left: 20px;
+  }
+
 
   .inexpensive{
     padding: 0px 8px
@@ -114,18 +124,35 @@
     text-align: center;
     margin-bottom: 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: none;
     padding: 20px;
     border-radius: 5px;
     height: 100vh;
-    overflow: scroll;
+    background-color: white;
   }
 
   .selection{
     padding: 0px 20px 20px;
     border-radius: 5px;
+    position: sticky;
+    top: 130px;
+    // position: fixed;
   }
 
+  .form-inline{
+    // position: fixed;
+  }
+
+  .filter-bar{
+    // position: fixed;
+  }
+
+  .filters {
+    position: sticky;
+    top: 0px;
+    background-color: #f4f4f4;
+    z-index: 1;
+  }
 
   #title-box{
     color: #FF9900;
