@@ -1,7 +1,7 @@
 class ClothesFilter
-  SIZES = {
-    small:
-  }
+  # SIZES = {
+  #   small:
+  # }
 
   def initialize(params)
     @params = params
