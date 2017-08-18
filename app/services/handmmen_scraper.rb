@@ -49,7 +49,6 @@ class HandmmenScraper
   end
 
   def extract_description_from(doc)
-    binding.pry
     doc.search('#content .description p')[0].text.strip
   end
 
