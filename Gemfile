@@ -22,6 +22,7 @@ gem 'figaro'
 
 gem 'nokogiri'
 gem 'rest-client'
+gem 'will_paginate', '~> 3.1.0'
 
 
 group :development, :test do

@@ -1,8 +1,9 @@
 class ClothesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :destroy]
 
+  # GET /clothes?name=fdslfdsmlfdsnm
   def index
-    #@clothes = ProductFilter.new(params).filter
+    @clothes = ClothesFilter.new(params).filter
     @clothes = Cloth.all
     @baskets = current_user.baskets
   end

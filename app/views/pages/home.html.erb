@@ -6,12 +6,13 @@
         <h1>The <strong class="strong-orange">perfect garment </strong>
         <br>is one search away</h1>
         </div>
-          <form>
+
+          <form action="<%= clothes_path %>" method="get">
             <div class="form-group search-input">
-              <input type="search" class="search-case" id="search-clothe" placeholder="T-Shirt Blue Navy">
+              <input type="search" class="search-case" id="search-clothe" placeholder="T-Shirt Blue Navy" name="name">
             </div>
             <div class="form-group">
-              <select class="form-control">
+              <select class="form-control" name="gender">
                 <option>Male</option>
                 <option>Female</option>
               </select>
@@ -20,6 +21,7 @@
               <button type="submit" class="btn btn-default button-orange">Search</button>
             </div>
           </form>
+
         </div>
     </div>
   </div>
