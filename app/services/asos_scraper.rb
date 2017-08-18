@@ -20,7 +20,7 @@ class AsosScraper
 
   private
 
-  def item_links
+  def item_links #step 1
     response = RestClient.get("http://www.asos.fr/homme/")
     doc_link = Nokogiri::HTML(response)
 
@@ -29,7 +29,7 @@ class AsosScraper
     end
   end
 
-  def product_ids_for_category(category_url)
+  def product_ids_for_category(category_url) #step 2
     response = RestClient.get(category_url)
     doc = Nokogiri::HTML(response)
 
@@ -47,7 +47,7 @@ class AsosScraper
     end
   end
 
-  def create_product_from(id)
+  def create_product_from(id) #step 3
     puts "Creating product from http://www.asos.fr/api/product/catalogue/v2/products/#{id}?store=US&currency=EUR"
     # Make an HTTP resquest to API
     response = RestClient.get("http://www.asos.fr/api/product/catalogue/v2/products/#{id}?store=US&currency=EUR")
@@ -66,7 +66,7 @@ class AsosScraper
       images_urls: response["media"]["images"].map { |images| images['url'] },
       gender: response["gender"],
       tags: strip_tags(response["description"]).split('   ')[0..-2],
-      provider_url: "http://www.asos.fr/api/product/catalogue/v2/products/#{id}?store=US&currency=EUR",
+      provider_url: "http://www.asos.fr/asos/fdskjfjdsl/prd/#{response['id']}",
       provider_id: response["id"]
     )
   rescue RestClient::NotFound => e
