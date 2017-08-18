@@ -1,0 +1,3 @@
+$(function() {
+  $('.sp-wrap').smoothproducts();
+});

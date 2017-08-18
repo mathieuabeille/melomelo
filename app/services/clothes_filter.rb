@@ -6,6 +6,7 @@ class ClothesFilter
   end
 
   def filter(params)
+
     filter_by_price
     filter_by_gender
     filter_by_color

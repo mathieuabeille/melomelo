@@ -1,5 +1,5 @@
 require 'json'
-
+#rails scrap:asos
 class AsosScraper
   include ActionView::Helpers::SanitizeHelper
 
@@ -20,7 +20,7 @@ class AsosScraper
 
   private
 
-  def item_links
+  def item_links #step 1
     response = RestClient.get("http://www.asos.fr/homme/")
     doc_link = Nokogiri::HTML(response)
 
@@ -29,7 +29,7 @@ class AsosScraper
     end
   end
 
-  def product_ids_for_category(category_url)
+  def product_ids_for_category(category_url) #step 2
     response = RestClient.get(category_url)
     doc = Nokogiri::HTML(response)
 
@@ -47,7 +47,7 @@ class AsosScraper
     end
   end
 
-  def create_product_from(id)
+  def create_product_from(id) #step 3
     puts "Creating product from http://www.asos.fr/api/product/catalogue/v2/products/#{id}?store=US&currency=EUR"
     # Make an HTTP resquest to API
     response = RestClient.get("http://www.asos.fr/api/product/catalogue/v2/products/#{id}?store=US&currency=EUR")
