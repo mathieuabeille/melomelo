@@ -1,0 +1,82 @@
+<form class="form-inline" action="<%= clothes_path %>">
+  <div class="form-group research">
+    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon" style="width: 50px;"><button type="submit" class="submit"><i class="fa fa-search loupe" aria-hidden="true"></i></button></div>
+      <input type="text" name="name" class="form-control" id="exampleInputAmount" placeholder="Navy Blue Shirt">
+    </div>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="croissant">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Filter</button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Ascending order</a></li>
+        <li><a href="#">Descending order</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dollar">
+    <div class="btn-group" role="group" aria-label="...">
+
+      <input type="checkbox" id="price-low" name="price[]" value="low" <%= "checked" if params[:price]&.include? "low" %>>
+      <label for="price-low" action="<%= clothes_path %>" method="get" type="button" class="btn btn-default radius-left">
+        <i class="fa fa-usd" aria-hidden= "true" name="low"></i>
+      </label>
+
+      <input type="checkbox" id="price-medium" name="price[]" value="middle" <%= "checked"if params[:price]&.include? "middle" %>>
+      <label for="price-medium" type="button" class="btn btn-default">
+        <i class="fa fa-usd" aria-hidden="true"></i><i class="fa fa-usd" aria-hidden="true"></i>
+      </label>
+
+      <input type="checkbox" id="price-high" name="price[]" value="high" <%= "checked" if params[:price]&.include? "high" %>>
+      <label for="price-high" type="button" class="btn btn-default" class="radius-right">
+        <i class="fa fa-usd" aria-hidden="true"></i><i class="fa fa-usd" aria-hidden="true"></i><i class="fa fa-usd" aria-hidden="true"></i>
+      </label>
+
+    </div>
+  </div>
+
+  <div class="gender">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Gender</button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Men</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="colors">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Color</button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Black</a></li>
+        <li><a href="#">Blue</a></li>
+        <li><a href="#">Orange</a></li>
+        <li><a href="#">Pink</a></li>
+        <li><a href="#">Purple</a></li>
+        <li><a href="#">Red</a></li>
+        <li><a href="#">Yellow</a></li>
+        <li><a href="#">White</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <input  class = "bouton-sub" type="submit" value="Filter">
+</form>
