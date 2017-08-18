@@ -3,36 +3,36 @@
 
 
 <div class="box-basket">
-<% if @basket.any? %>
-  <div class="container">
-    <div class="row">
-      <% @basket.each do |basket| %>
-        <div class="col-sm-4 col-md-3 col-xs-12">
-          <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= basket.id %>">
-            <div class="card-back" data-target="#preview">
-                <div class="card-image"  style="background-image: url('http://<%= basket.cloth.images_urls.first %>');">
-                  <%= link_to basket_path(basket), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                   <div class="delete"> <%= icon("trash") %></div>
-                  <% end %>
-                  <div class="price"> <%= basket.cloth.brand %></p></div>
-                </div>
+  <% if @basket.any? %>
+    <div class="container">
+      <div class="row">
+        <% @basket.each do |basket| %>
+          <div class="col-sm-4 col-md-3 col-xs-12">
+            <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= basket.id %>">
+              <div class="card-back" data-target="#preview">
+                  <div class="card-image"  style="background-image: url('http://<%= basket.cloth.images_urls.first %>');">
+                    <%= link_to basket_path(basket), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                     <div class="delete"> <%= icon("trash") %></div>
+                    <% end %>
+                    <div class="price"> <%= basket.cloth.brand %></p></div>
+                  </div>
 
-              <div class="card-informations">
-                <h3><%= basket.cloth.name %> - <%= basket.cloth.price %>$ </h3>
-                <p><%= basket.cloth.description %></p>
+                <div class="card-informations">
+                  <h3><%= basket.cloth.name %> - <%= basket.cloth.price %>$ </h3>
+                  <p><%= basket.cloth.description %></p>
+                </div>
               </div>
             </div>
-          </div>
 
 
-          <!-- Modal -->
-          <div class="modal fade" id="preview-<%= basket.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+            <!-- Modal -->
+            <div class="modal fade" id="preview-<%= basket.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                     <div class="container">
                       <div class="row">
                         <div class="col-md-4">
@@ -54,34 +54,34 @@
                         </div>
                       </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Go to the website</button>
+                  </div>
+                  <div class="modal-footer">
+                    <%= link_to 'Go to the website', basket.cloth.provider_url, class: 'btn btn-primary', target: "_blank" %>
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- end modal -->
           </div>
-          <!-- end modal -->
-        </div>
-      <% end %>
-      <!-- <div class="col-sm-4 col-md-3 col-xs-12">
-        <div class="stage-bk-det">
-          <div class="card-back">
-            <div class="card-image">
-                <div class="crux">
-                  <p><center><i class="fa fa-plus" aria-hidden="true"></i></center></p>
-                </div>
+        <% end %>
+        <!-- <div class="col-sm-4 col-md-3 col-xs-12">
+          <div class="stage-bk-det">
+            <div class="card-back">
+              <div class="card-image">
+                  <div class="crux">
+                    <p><center><i class="fa fa-plus" aria-hidden="true"></i></center></p>
+                  </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div> -->
+        </div> -->
+      </div>
     </div>
-  </div>
-<% else %>
-<br/>
-<center><br/><h1>Your basket is empty.</h1><br/>
-<iframe src="https://giphy.com/embed/kHvk0CbfL5d4I" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></center>
+  <% else %>
+    <br/>
+    <center><br/><h1>Your basket is empty.</h1><br/>
+    <iframe src="https://giphy.com/embed/kHvk0CbfL5d4I" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></center>
 
-<% end %>
+  <% end %>
 </div>
 

@@ -66,7 +66,7 @@ class AsosScraper
       images_urls: response["media"]["images"].map { |images| images['url'] },
       gender: response["gender"],
       tags: strip_tags(response["description"]).split('   ')[0..-2],
-      provider_url: "http://www.asos.fr/api/product/catalogue/v2/products/#{id}?store=US&currency=EUR",
+      provider_url: "http://www.asos.fr/asos/fdskjfjdsl/prd/#{response['id']}",
       provider_id: response["id"]
     )
   rescue RestClient::NotFound => e
