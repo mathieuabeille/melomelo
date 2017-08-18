@@ -55,3 +55,15 @@
     }
   }
 }
+
+.facebook {
+    width: 300px;
+}
+
+@media (max-width: $screen-md-min) {
+  .facebook {
+    text-align: center;
+    margin: auto;
+  }
+
+}

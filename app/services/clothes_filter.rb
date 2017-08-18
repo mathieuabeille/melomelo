@@ -6,6 +6,7 @@ class ClothesFilter
     @clothes = Cloth.all
   end
 
+
   def filter
 
     filter_by_price
@@ -13,9 +14,9 @@ class ClothesFilter
     filter_by_color
     filter_by_ascending
     filter_by_name
-
     @clothes
   end
+
 
   def filter_by_name
     if params[:name].present?
