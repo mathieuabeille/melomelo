@@ -9,13 +9,15 @@ class ClothesFilter
   end
 
   def filter(params)
-    filter_by_size
+    # filter_by_size
     # filter_by_category
     # filter_by_color
     # filter_by_price
-
+    filter_by_gender
+    filter_by_name
     @clothes
   end
+
 
   def filter_by_size
     if params[:size].present?
