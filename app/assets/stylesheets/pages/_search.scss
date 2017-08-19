@@ -27,16 +27,6 @@
         border-bottom-left-radius: 10px;
         width:50px;
       }
-
-      .radius-left{
-        // border-top-left-radius: 10px;
-        // border-bottom-left-radius: 10px;
-      }
-
-      .radius-right{
-        // border-top-right-radius: 10px;
-        // border-bottom-right-radius: 10px;
-      }
     }
 
     .s-i{
@@ -94,13 +84,6 @@
     }
   }
 
-  .btn-default {
-    // border-bottom-right-radius: 10px;
-    // border-top-right-radius: 10px;
-    // border-bottom-left-radius: 10px;
-    // border-top-left-radius: 10px;
-  }
-
   .bouton-sub {
     margin-left: 20px;
     background: #F4F4F;
@@ -151,24 +134,19 @@
     border: none;
     padding: 20px;
     border-radius: 5px;
-    height: 100vh;
     background-color: white;
   }
 
   .selection{
     padding: 0px 20px 20px;
     border-radius: 5px;
+  }
+
+  .sticky-board {
     position: sticky;
     top: 130px;
-    // position: fixed;
-  }
-
-  .form-inline{
-    // position: fixed;
-  }
-
-  .filter-bar{
-    // position: fixed;
+    max-height: calc(100vh - 140px);
+    overflow: scroll;
   }
 
   .filters {
@@ -180,43 +158,6 @@
 
   #title-box{
     color: #FF9900;
-  }
-
-  .card-fond{
-    // background: white;
-    // padding: 5px;
-    // border-radius: 4px;
-    // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    // border: 1px solid rgba(0, 0, 0, 0.1);
-    // position:relative;
-    // margin-bottom: 15px;
-    // height:300px;
-  }
-
-
-  .card_image{
-  //   margin:5px 5px;
-  //   height: 220px;
-  //   background-size: cover;
-  //   border-radius: 4px;
-  //   align-items: center;
-  //   justify-content: center;
-  }
-
-  .card-category{
-    // display: flex;
-  }
-
-  .card-description{
-    // margin: none;
-    // position: absolute;
-    // bottom: 1px;
-    // padding: none;
-
-    // p{
-    //   margin: none;
-    //   padding: none;
-    // }
   }
 
   .btn-group label:first-of-type {
