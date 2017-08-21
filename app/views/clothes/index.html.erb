@@ -12,15 +12,16 @@
       <div class="row cadre">
         <% @clothes.each do |cloth| %>
           <div class="col-sm-6">
-            <div class="stage-bk-det">
+            <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= cloth.id %>">
               <div class="card-back">
                   <div class="card-image" style="background-image: url('http://<%= cloth.images_urls.first %>');">
                   <%= link_to clothe_baskets_path(cloth), method: :post, data: {
                     confirm: 'Add to cart?',
                     'confirm-button-text': 'Add',
-                    'cancel-button-text': 'Nope',
+                    'cancel-button-text': 'Never',
                     'confirm-button-color': '#FF9900',
                     'sweet-alert-type': 'question',
+                    'sweet-alert-color': '#FF9900',
                     text: cloth.name
                     } do %>
                   <div class="delete"><%= icon("heart")%></div>
@@ -34,7 +35,31 @@
                 </div>
               </div>
             </div>
+          </div>
 
+          <div class="modal fade" id="preview-<%= cloth.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="sp-wrap">
+                          <% cloth.images_urls.each do |image|%>
+                            <%= link_to "http://#{image}" do %>
+                              <%= image_tag "http://#{image}" %>
+                            <% end %>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
         <% end %>
