@@ -26,29 +26,31 @@ class ClothesFilter
 
   def filter_by_price
     if params[:price].present?
-
-      @clothes = @clothes.where("price <= ?", 50) if params[:price].include? "low"
-      @clothes = @clothes.where("price >= ? and price < ?", 50, 150) if params[:price].include? "middle"
-      @clothes = @clothes.where("price >= ?", 150) if params[:price].include? "high"
+      @clothes = @clothes.where(price: price_min..price_max)
+      # @clothes = @clothes.where("price <= ?", 50) if params[:price].include? "low"
+      # @clothes = @clothes.where("price >= ? and price < ?", 50, 150) if params[:price].include? "middle"
+      # @clothes = @clothes.where("price >= ?", 150) if params[:price].include? "high"
     end
   end
 
   def filter_by_gender
     if params[:gender].present?
-      @clothes = @clothes.where("gender ilike ?", "men") if params[:gender] == "male"
-      @clothes = @clothes.where("gender ilike ?", "women") if params[:gender] == "female"
+      @clothes = @clothes.where("gender ilike ?", "men") if params[:gender] == "men"
+      @clothes = @clothes.where("gender ilike ?", "women") if params[:gender] == "women"
     end
   end
 
   def filter_by_color
     if params[:color].present?
-      @clothes = @clothes.where("color ilike ?", "%black%") if params[:color] == "black"
-      @clothes = @clothes.where("color ilike ?", "%blue%") if params[:color] == "blue"
-      @clothes = @clothes.where("color ilike ?", "%orange%") if params[:color] == "orange"
-      @clothes = @clothes.where("color ilike ?", "%purple%") if params[:color] == "purple"
-      @clothes = @clothes.where("color ilike ?", "%red%") if params[:color] == "red"
-      @clothes = @clothes.where("color ilike ?", "%yellow%") if params[:color] == "yellow"
-      @clothes = @clothes.where("color ilike ?", "%white%") if params[:color] == "white"
+      colors = params[:color].map { |color| "%#{color}%" }
+      @clothes = @clothes.where("color ILIKE ANY ( array[?] )", colors)
+      # @clothes = @clothes.where("color ilike ?", "%black%") if params[:color].include? "black"
+      # @clothes = @clothes.where("color ilike ?", "%blue%") if params[:color].include?"blue"
+      # @clothes = @clothes.where("color ilike ?", "%orange%") if params[:color].include?"orange"
+      # @clothes = @clothes.where("color ilike ?", "%purple%") if params[:color].include?"purple"
+      # @clothes = @clothes.where("color ilike ?", "%red%") if params[:color].include?"red"
+      # @clothes = @clothes.where("color ilike ?", "%yellow%") if params[:color].include?"yellow"
+      # @clothes = @clothes.where("color ilike ?", "%white%") if params[:color].include?"white"
     end
   end
 
@@ -66,4 +68,18 @@ class ClothesFilter
     #   @clothes = @clothes.where("size >= ?", 40) if large
 
     # end
+
+  def price_min
+    price_min = 0
+    price_min = 150 if params[:price].include?("high")
+    price_min = 50 if params[:price].include?("medium")
+    price_min = 0 if params[:price].include?("low")
+  end
+
+  def price_max
+    price_min = 50
+    price_min = 99999 if params[:price].include?("high")
+    price_min = 150 if params[:price].include?("medium")
+    price_min = 50 if params[:price].include?("low")
+  end
 end
