@@ -11,14 +11,24 @@
 <div class="filter-bar">
   <div class="croissant">
     <div class="btn-group">
-      <button type="button" class="btn btn-default">Filter</button>
+      <button type="button" class="btn btn-default">Filter by</button>
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Ascending order</a></li>
-        <li><a href="#">Descending order</a></li>
+        <li>
+          <input type="checkbox" id="price-asc" name="price[]" value="asc" <%= "checked" if params[:price]&.include? "ascending" %>>
+          <label for="price-asc" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="ascending">Ascending</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="price-desc" name="price[]" value="desc" <%= "checked" if params[:price]&.include? "descending" %>>
+          <label for="price-desc" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="descending">Descending</i>
+          </label>
+        </li>
       </ul>
     </div>
   </div>
@@ -52,8 +62,18 @@
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Women</a></li>
-        <li><a href="#">Men</a></li>
+        <li>
+          <input type="checkbox" id="gender-women" name="gender[]" value="women" <%= "checked" if params[:gender]&.include? "women" %>>
+          <label for="gender-women" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="black">Women</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="gender-men" name="gender[]" value="men" <%= "checked" if params[:gender]&.include? "men" %>>
+          <label for="gender-men" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="black">Men</i>
+          </label>
+        </li>
       </ul>
     </div>
   </div>
@@ -66,17 +86,58 @@
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Black</a></li>
-        <li><a href="#">Blue</a></li>
-        <li><a href="#">Orange</a></li>
-        <li><a href="#">Pink</a></li>
-        <li><a href="#">Purple</a></li>
-        <li><a href="#">Red</a></li>
-        <li><a href="#">Yellow</a></li>
-        <li><a href="#">White</a></li>
+        <li>
+          <input type="checkbox" id="color-black" name="color[]" value="black" <%= "checked" if params[:color]&.include? "black" %>>
+          <label for="color-black" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="black">Black</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="color-blue" name="color[]" value="blue" <%= "checked" if params[:color]&.include? "blue" %>>
+          <label for="color-blue" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="blue">Blue</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="color-orange" name="color[]" value="orange" <%= "checked" if params[:color]&.include? "orange" %>>
+          <label for="color-orange" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="orange">Orange</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="color-pink" name="color[]" value="pink" <%= "checked" if params[:color]&.include? "pink" %>>
+          <label for="color-pink" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="pink">Pink</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="color-purple" name="color[]" value="purple" <%= "checked" if params[:color]&.include? "purple" %>>
+          <label for="color-purple" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="purple">Purple</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="color-red" name="color[]" value="red" <%= "checked" if params[:color]&.include? "red" %>>
+          <label for="color-red" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="red">Red</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="color-yellow" name="color[]" value="yellow" <%= "checked" if params[:color]&.include? "yellow" %>>
+          <label for="color-yellow" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="yellow">Yellow</i>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="color-white" name="color[]" value="white" <%= "checked" if params[:color]&.include? "white" %>>
+          <label for="color-white" action="<%= clothes_path %>" method="get">
+          <i aria-hidden= "true" name="white">White</i>
+          </label>
+        </li>
       </ul>
     </div>
   </div>
 
-  <input  class = "bouton-sub" type="submit" value="Filter">
+
+  <input  class = "bouton-sub" type="submit" value="Search">
 </form>
