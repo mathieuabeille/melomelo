@@ -13,4 +13,9 @@ namespace :scrap do
   task handmwomen: :environment do
     HandmwomenScraper.new.run
   end
+
+  desc "Scrap topman"
+  task topshop: :environment do
+    TopshopScraper.new.run
+  end
 end

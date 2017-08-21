@@ -15,7 +15,8 @@
             <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= cloth.id %>">
               <div class="card-back">
                   <div class="card-image" style="background-image: url('http://<%= cloth.images_urls.first %>');">
-                  <%= link_to clothe_baskets_path(cloth), method: :post, data: {
+
+                  <%= link_to clothe_baskets_path(cloth), method: :post, data: {confirm: 'Add to basket?'}, remote: true do %>
                     confirm: 'Add to cart?',
                     'confirm-button-text': 'Add',
                     'cancel-button-text': 'Never',
@@ -71,20 +72,9 @@
       <div class ="selection">
         <div class="your-board" id="title-box">
           <div class="row">
-            <p>Your Selection</p>
+            <p class="basket-content">Your Selection</p>
             <% @baskets.each do |basket| %>
-              <div class="col-xs-12">
-                <div class="stage-bk-det-board">
-                  <div class="card-back-board">
-                    <div class="card-image-board" style="background-image: url('http://<%= basket.cloth.images_urls.first %>');">
-                    </div>
-
-                    <div class="card-informations-board">
-                      <h6><%= basket.cloth.name %> <br/> <%= basket.cloth.brand %> <br/> <%= basket.cloth.price %>$</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <%= render 'side_card', basket: basket %>
             <% end %>
           </div>
         </div>
@@ -92,7 +82,3 @@
     </div>
   </div>
 </div>
-
-
-
-
