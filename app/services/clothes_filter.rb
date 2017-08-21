@@ -8,7 +8,6 @@ class ClothesFilter
 
 
   def filter
-
     filter_by_price
     filter_by_gender
     filter_by_color

@@ -21,6 +21,5 @@ class BasketsController < ApplicationController
     @basket.cloth = @cloth
     @basket.user = current_user
     @basket.save
-    redirect_to clothes_path
   end
 end

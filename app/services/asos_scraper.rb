@@ -86,4 +86,5 @@ class AsosScraper
       []
     end
   end
+
 end
