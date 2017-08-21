@@ -23,7 +23,8 @@ gem 'figaro'
 gem 'nokogiri'
 gem 'rest-client'
 gem 'kaminari'
-
+gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'sweet-alert2-rails'
 
 group :development, :test do
   gem 'pry-byebug'
