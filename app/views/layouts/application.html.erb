@@ -9,9 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body class="<%= params[:controller] %> <%= params[:action] %>">
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="content">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
   </body>
