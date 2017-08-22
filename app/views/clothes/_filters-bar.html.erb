@@ -18,15 +18,15 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <input type="checkbox" id="price-asc" name="price[]" value="asc" <%= "checked" if params[:price]== "ascending" %>>
+          <input type="radio" id="price-asc" name="sort" value="asc" <%= "checked" if params[:price]== "ascending" %>>
           <label for="price-asc" action="<%= clothes_path %>" method="get">
-          <i aria-hidden= "true" name="ascending">Ascending</i>
+          <i aria-hidden= "true" name="ascending"> Ascending</i>
           </label>
         </li>
         <li>
-          <input type="checkbox" id="price-desc" name="price[]" value="desc" <%= "checked" if params[:price] == "descending" %>>
+          <input type="radio" id="price-desc" name="sort" value="desc" <%= "checked" if params[:price] == "descending" %>>
           <label for="price-desc" action="<%= clothes_path %>" method="get">
-          <i aria-hidden= "true" name="descending">Descending</i>
+          <i aria-hidden= "true" name="descending"> Descending</i>
           </label>
         </li>
       </ul>
@@ -63,15 +63,15 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <input type="checkbox" id="gender-women" name="gender[]" value="women" <%= "checked" if params[:gender]&.include? "women" %>>
+          <input type="radio" id="gender-women" name="gender[]" value="women" <%= "checked" if params[:gender]&.include? "women" %> >
           <label for="gender-women" action="<%= clothes_path %>" method="get">
-          <i aria-hidden= "true" name="black">Women</i>
+          <i aria-hidden= "true" name="black"> Women</i>
           </label>
         </li>
         <li>
-          <input type="checkbox" id="gender-men" name="gender[]" value="men" <%= "checked" if params[:gender]&.include? "men" %>>
+          <input type="radio" id="gender-men" name="gender[]" value="men" <%= "checked" if params[:gender]&.include? "men" %> >
           <label for="gender-men" action="<%= clothes_path %>" method="get">
-          <i aria-hidden= "true" name="black">Men</i>
+          <i aria-hidden= "true" name="black"> Men</i>
           </label>
         </li>
       </ul>

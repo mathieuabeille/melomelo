@@ -13,16 +13,19 @@
               <div class="form-group search-input">
                 <input type="search" class="search-case" id="search-clothe" placeholder="T-Shirt Blue Navy" name="name">
               </div>
+
               <div class="form-group">
-                <select class="form-control" name="gender">
-                  <option>Male</option>
-                  <option>Female</option>
+                <select class="form-control" name="gender[]" action="<%= clothes_path %>">
+                  <option>men</option>
+                  <option>women</option>
                 </select>
               </div>
+
               <div class="form-group">
                 <button type="submit" class="btn btn-default button-orange">Search</button>
               </div>
             </form>
+
 
         <% else %>
 
