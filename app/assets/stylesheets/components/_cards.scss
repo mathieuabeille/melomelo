@@ -193,3 +193,26 @@
     color: black;
   }
 }
+
+.btn-orange {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $orange;
+  transition: background 0.3s ease;
+  opacity: 0.8;
+  text-align: center;
+  display: block;
+}
+
+.btn-orange:hover {
+  opacity: 1;
+  background: $orange;
+  text-decoration: none;
+  color: white;
+}
+
+.modal-dialog {
+  margin-top: 219px;
+}
