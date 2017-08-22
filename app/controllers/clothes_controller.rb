@@ -7,5 +7,4 @@ class ClothesController < ApplicationController
     @clothes = @clothes.page(params[:page] || 1)
     @baskets = current_user.baskets
   end
-
 end
