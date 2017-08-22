@@ -10,7 +10,8 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8">
       <div class="row cadre">
-        <% @clothes.each do |cloth| %>
+      <% if @clothes.any? %>
+          <% @clothes.each do |cloth| %>
           <div class="col-sm-6">
             <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= cloth.id %>">
               <div class="card-back">
@@ -78,14 +79,19 @@
                     'sweet-alert-color': '#FF9900',
                     text: cloth.name
                     }, remote: true do %>
-                    <div class="btn-orange"> Add to Cart </div>
+                    <div> Add to Cart </div>
                     <% end %>
                   </div>
                 </div>
               </div>
             </div>
-
         <% end %>
+        <% else %>
+        <div class="col-sm-6">
+        <p>Nothing matches</p>
+        </div>
+      <% end %>
+
       </div>
       <div class="page"><center><%= paginate @clothes %></center></div>
     </div>
