@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   has_many :baskets, dependent: :destroy
+  has_many :wishes, dependent: :destroy
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
