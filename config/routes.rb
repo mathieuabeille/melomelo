@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :baskets, only: :create
   end
   resources :baskets, only: [:index, :destroy]
+  resources :wishes, only: [:index, :create, :destroy]
 end
 
 
