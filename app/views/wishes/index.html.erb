@@ -1,0 +1,30 @@
+<div class="header-basket"><br/><center><h1>My Whishes</h1></center>
+</div>
+
+<div class="box-basket">
+  <% if @wish.any? %>
+    <div class="container">
+      <div class="row">
+        <% @wish.each do |wish| %>
+          <div class="col-sm-4 col-md-3 col-xs-12">
+            <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= basket.id %>">
+              <div class="card-back" data-target="#preview">
+                  <div class="card-image"  style="background-image: url('http://<%= basket.cloth.images_urls.first %>');">
+                    <%= link_to wish_path(wish), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                     <div class="delete"> <%= icon("trash") %></div>
+                    <% end %>
+                  </div>
+
+                <div class="card-informations">
+                  <h3><%= basket.cloth.name %> - <%= basket.cloth.price %>$ </h3>
+                  <p><%= basket.cloth.description %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  <%end%>
+</div>
+
