@@ -8,8 +8,4 @@ class ClothesController < ApplicationController
     @baskets = current_user.baskets
   end
 
-  # def create
-  # faut-il créer une methode???
-  # end
-
 end

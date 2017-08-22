@@ -82,6 +82,7 @@
       background: #FF9900;
       color: white;
     }
+
   }
 
   .bouton-sub {
@@ -117,11 +118,11 @@
       font-weight: normal;
     }
 
-    input[type="checkbox"] {
+    input[type="radio"] {
       display: none;
     }
 
-    input[type="checkbox"]:checked + label {
+    input[type="radio"]:checked + label {
       background: #FF9900;
       color: white;
       margin:0;
@@ -137,11 +138,11 @@
       font-weight: normal;
     }
 
-    input[type="checkbox"] {
+    input[type="radio"] {
       display: none;
     }
 
-    input[type="checkbox"]:checked + label {
+    input[type="radio"]:checked + label {
       background: #FF9900;
       color: white;
       margin:0;
