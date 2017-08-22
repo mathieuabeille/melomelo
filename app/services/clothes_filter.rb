@@ -16,7 +16,6 @@ class ClothesFilter
     @clothes
   end
 
-
   def filter_by_name
     if params[:name].present?
       @clothes = @clothes.where("name ilike ?", "%#{params[:name]}%")
@@ -34,8 +33,8 @@ class ClothesFilter
 
   def filter_by_gender
     if params[:gender].present?
-      @clothes = @clothes.where("gender ilike ?", "men") if params[:gender].include?"men"
-      @clothes = @clothes.where("gender ilike ?", "women") if params[:gender].include?"women"
+      @clothes = @clothes.where("gender ilike ?", "men") if params[:gender].include?("men")
+      @clothes = @clothes.where("gender ilike ?", "women") if params[:gender].include?("women")
     end
   end
 
@@ -58,10 +57,9 @@ class ClothesFilter
   end
 
   def filter_by_ascending
-
-    if params[:price].present?
-      @clothes = @clothes.order(price: :asc) if params[:price] == "ascending"
-      @clothes = @clothes.order(price: :desc) if params[:price] == "descending"
+    if params[:sort].present?
+      @clothes = @clothes.order(price: :asc) if params[:sort] == "asc"
+      @clothes = @clothes.order(price: :desc) if params[:sort] == "desc"
     end
   end
 
