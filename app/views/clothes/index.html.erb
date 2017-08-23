@@ -1,7 +1,16 @@
 <div class="filters">
   <div class="container">
-    <div class="alignement">
-      <%= render "filters-bar" %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="alignement">
+          <%= render "filters-bar" %>
+        </div>
+        <div class="search-sub">
+          <strong>
+             Your search : <%= params[:name] %> <%= params[:gender]&.join(" ") %> <%= params[:color]&.join(" ")%> <%= params[:price]&.join(" ")%>
+          </strong>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -9,32 +18,34 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8">
-      <div class="row cadre">
+      <div class="row">
       <% if @clothes.any? %>
           <% @clothes.each do |cloth| %>
           <div class="col-sm-6">
-            <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= cloth.id %>">
-              <div class="card-back">
-                  <div class="card-image" style="background-image: url('http://<%= cloth.images_urls.first %>');">
+            <div class="cadre">
+              <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= cloth.id %>">
+                <div class="card-back">
+                    <div class="card-image" style="background-image: url('http://<%= cloth.images_urls.first %>');">
 
-                  <%= link_to clothe_baskets_path(cloth), method: :post, data: {
-                    confirm: 'Add to cart?',
-                    'confirm-button-text': 'Add',
-                    'cancel-button-text': 'Never',
-                    'confirm-button-color': '#FF9900',
-                    'sweet-alert-type': 'question',
-                    'sweet-alert-color': '#FF9900',
-                    text: cloth.name
-                    }, remote: true do %>
-                  <div class="delete"><%= icon("heart")%></div>
-                  <% end %>
+                    <%= link_to clothe_baskets_path(cloth), method: :post, data: {
+                      confirm: 'Add to cart?',
+                      'confirm-button-text': 'Add',
+                      'cancel-button-text': 'Never',
+                      'confirm-button-color': '#FF9900',
+                      'sweet-alert-type': 'question',
+                      'sweet-alert-color': '#FF9900',
+                      text: cloth.name
+                      }, remote: true do %>
+                    <div class="delete"><%= icon("heart")%></div>
+                    <% end %>
 
-                    <div class="price"> <%= cloth.price %>$</div>
+                      <div class="price"> <%= cloth.price %>$</div>
+                    </div>
+
+                  <div class="card-informations">
+                    <h3><%= cloth.name %> - <%= cloth.brand %> - <%= cloth.sizes %></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium voluptas praesentium totam tempora earum magni rerum laboriosam mollitia debitis.</p>
                   </div>
-
-                <div class="card-informations">
-                  <h3><%= cloth.name %> - <%= cloth.brand %> - <%= cloth.sizes %></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium voluptas praesentium totam tempora earum magni rerum laboriosam mollitia debitis.</p>
                 </div>
               </div>
             </div>
@@ -88,10 +99,12 @@
         <% end %>
         <% else %>
         <div class="col-xs-12 col-sm-12">
-          <div class="no-result">
-            <div class='image_no_result'> <%= image_tag "logo.png" %> </div>
-            <p>No results found ! <br> Would you like create a Wish ?</p>
-            <%= link_to "Create a Wish", new_wish_path(price: params[:price], colors: params[:color], gender: params[:gender], name: params[:name]), class: "btn-orange" %>
+          <div class="cadre">
+            <div class="no-result">
+              <div class='image_no_result'> <%= image_tag "logo.png" %> </div>
+              <p>No results found ! <br> Would you like create a Wish ?</p>
+              <%= link_to "Create a Wish", new_wish_path(price: params[:price], colors: params[:color], gender: params[:gender], name: params[:name]), class: "btn-orange" %>
+            </div>
           </div>
         </div>
       <% end %>
