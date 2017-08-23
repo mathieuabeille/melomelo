@@ -1,0 +1,11 @@
+<h1>Hi <%= @user.first_name %> <%= @user.last_name %>,</h1>
+
+<p> Good news ! You have a match !</p>
+<br/>
+<p>You wanted a <%= @wish.description %></p>
+<br/>
+<p> <%= @cloth.brand %> made it for you.</p>
+<br/>
+<p>Here is the product : <%= image_tag @cloth.images_urls %></p>
+
+<p> <%= link to 'Visit the website' @cloth.provider_url_path %></p>
