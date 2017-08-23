@@ -4,7 +4,15 @@ class WishesController < ApplicationController
   end
 
   def new
-    @wish = Wish.new
+    @wish = Wish.new(
+      name: params[:name],
+      brand: params[:brand],
+      color: params[:color],
+      price: params[:price],
+      material: params[:material],
+      gender: params[:gender],
+    )
+
   end
 
   def create
