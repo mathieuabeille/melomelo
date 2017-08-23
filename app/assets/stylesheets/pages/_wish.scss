@@ -14,11 +14,11 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: left;
     border-radius: 5px;
-    height: 280px;
 
     h3 {
       padding: 5px;
       color: $orange;
+      margin-bottom: 0;
     }
     h5 {
       padding: 5px;
@@ -27,28 +27,31 @@
     }
   }
 
-  .plus{
-    height:100px;
-    width:100px;
-    text-align: justify;
-    vertical-align: middle;
-    display: inline-block;
-  }
-
-  .fa-plus-circle{
-    height:100px;
-    width:100px;
-    font-size: 80px;
+  i.fa-plus-circle{
+    font-size: 30px;
     color: $orange;
     opacity: 0.8;
+  }
 
+  .new-wish-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
   }
 }
 
-.form-container {
-  margin-top: 30px;
-  padding: 20px;
-  margin-bottom: 30px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+.boxlog{
+  display: inline-block;
+  justify-content: center;
+}
+
+.fa-edit{
+  color:$orange;
+  margin-left: 5px;
+}
+
+.fa-trash{
+  color:$orange;
+  margin-left: 20px;
 }
