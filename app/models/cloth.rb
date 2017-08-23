@@ -1,21 +1,21 @@
 class Cloth < ApplicationRecord
   self.table_name = 'clothes'
 
+  after_create :check_match_wishes
 
-  # after_create :match_check
+  private
+
+  def check_match_wishes
+    # 1. Check for every wish, if the wish match the cloth
+    Wish.all.each do |wish|
+      send_match_email(wish) if MatchTest.new(self, wish).match?
+    end
+  end
 
 
-  # private
-
-  # def match_check
-  #   if self.match?()
-  #     return #action d'envoyer un email.
-  #   else
-  #     return pu
-  #   end
+  def send_match_email(wish)
+    UserMailer.match(self, wish).deliver_now
+  end
 end
 
 
-# #pour color
-
-# Wish each do
