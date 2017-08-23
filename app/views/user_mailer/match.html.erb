@@ -1,11 +1,13 @@
-<h1>Hi <%= @user.first_name %> <%= @user.last_name %>,</h1>
-
+<div class="headermailer"><center> <h4><br/>You have a match !</h4></center></div>
+<div class="box-mailer"><center>
+<p><br/>Hi <%= @user.first_name%> <%= @user.last_name %>,</p>
 <p> Good news ! You have a match !</p>
-<br/>
-<p>You wanted a <%= @wish.description %></p>
-<br/>
-<p> <%= @cloth.brand %> made it for you.</p>
-<br/>
-<p>Here is the product : <%= image_tag @cloth.images_urls %></p>
+<p>You wanted a <b> <%= @wish.color %> <%= @wish.name %> in <%= @wish.material %>.</b> <%= @cloth.brand.capitalize %> made it for you.</p>
+<% @cloth.images_urls.each do |url| %>
+  Here is the product : <%= image_tag url %></p>
+<% end %>
 
-<p> <%= link to 'Visit the website' @cloth.provider_url_path %></p>
+<%= image_tag 'https://static.zara.net/photos///2017/I/0/1/p/6164/183/427/2/w/1024/6164183427_1_1_1.jpg?ts=1501838441614', style: 'height: 200px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); padding: 5px;margin: 5px;' %><%= image_tag 'https://static.zara.net/photos///2017/I/0/1/p/6164/183/427/2/w/1024/6164183427_2_1_1.jpg?ts=1501838380934', style: 'height: 200px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);padding: 5px;margin: 5px;' %>
+
+<p> <%= link_to 'Visit the website', @cloth.provider_url, class: 'btn-treehouse' %></p>
+</center></div>
