@@ -13,7 +13,6 @@ class Cloth < ApplicationRecord
   #   else
   #     return pu
   #   end
-  end
 end
 
 
