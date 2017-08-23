@@ -102,6 +102,18 @@
     border-color: buttonface;
   }
 
+  .search-sub {
+    margin-left: 5px;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.428571429;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: buttonface;
+    flex-grow: 1;
+  }
+
   .dollar{
     margin:0px 20px 0px 0px;
     color: #FF9900;
@@ -192,13 +204,14 @@
   }
 
   .selection{
-    padding: 0px 20px 20px;
+    padding: 0px 5px 20px;
     border-radius: 5px;
+    margin-top: 15px;
   }
 
   .sticky-board {
     position: sticky;
-    top: 130px;
+    top: 152px;
     max-height: calc(100vh - 140px);
     overflow: scroll;
   }
@@ -264,9 +277,7 @@
 }
 
 .no-result {
-  margin: 50px 50px;
   padding: 50px 50px;
-  height: 60vh;
   text-align: center;
   item-align: center;
 
