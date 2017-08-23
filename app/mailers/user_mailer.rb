@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
     @user = wish.user
     @cloth = cloth
     @wish = wish
-    mail(to: @user.email, subject: 'You have a cloth match')
+    mail(to: @user.email, subject: 'Melomelo : You have a match !')
   end
 
 end

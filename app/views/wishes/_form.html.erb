@@ -1,7 +1,7 @@
 <div id="padding">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 boxlog">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-container">
         <%= simple_form_for(@wish) do |f| %>
             <div class="form-inputs">
               <%= f.input :name %>
@@ -9,7 +9,7 @@
               <%= f.input :color %>
               <%= f.input :price %>
               <%= f.input :material %>
-              <%= f.input :gender %>
+              <%= f.input :gender, collection: ["Men", "Women"], as: :radio_buttons %>
             </div>
             <div class="form-actions">
               <%= f.button :submit, "Send" %>
