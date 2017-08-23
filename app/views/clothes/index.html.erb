@@ -103,7 +103,13 @@
             <div class="no-result">
               <div class='image_no_result'> <%= image_tag "logo.png" %> </div>
               <p>No results found ! <br> Would you like create a Wish ?</p>
-              <%= link_to "Create a Wish", new_wish_path(price: params[:price], colors: params[:color], gender: params[:gender], name: params[:name]), class: "btn-orange" %>
+              <%= link_to "Create a Wish", new_wish_path(
+              price: params[:price],
+              color: params[:color],
+              gender: params[:gender],
+              name: params[:name],
+              price: params[:price]),
+              class: "btn-orange" %>
             </div>
           </div>
         </div>
