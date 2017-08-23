@@ -262,3 +262,21 @@
   }
   border-radius: 5px;
 }
+
+.no-result {
+  margin: 50px 50px;
+  padding: 50px 50px;
+  height: 60vh;
+  text-align: center;
+  item-align: center;
+
+  img {
+    height: 290px;
+    width: 280px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+  }
+
+}
+
+
