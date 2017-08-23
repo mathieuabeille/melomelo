@@ -2,29 +2,51 @@
 </div>
 
 <div class="box-basket">
-  <% if @wish.any? %>
+  <% if @wishes.any? %>
     <div class="container">
       <div class="row">
-        <% @wish.each do |wish| %>
+        <% @wishes.each do |wish| %>
           <div class="col-sm-4 col-md-3 col-xs-12">
-            <div class="stage-bk-det" data-toggle="modal" data-target="#preview-<%= basket.id %>">
-              <div class="card-back" data-target="#preview">
-                  <div class="card-image"  style="background-image: url('http://<%= basket.cloth.images_urls.first %>');">
-                    <%= link_to wish_path(wish), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                     <div class="delete"> <%= icon("trash") %></div>
-                    <% end %>
-                  </div>
-
-                <div class="card-informations">
-                  <h3><%= basket.cloth.name %> - <%= basket.cloth.price %>$ </h3>
-                  <p><%= basket.cloth.description %></p>
-                </div>
+            <div class="box" data-toggle="modal" data-target="#preview-<%= wish.id %>">
+              <div class="Title_wish"><center><h3>Wish</h3></center></div>
+              <div class="description_wish">
+                <% if wish.name.present? %>
+                  <h5><i class="fa fa-check tick" aria-hidden="true"></i><%= wish.name %></h5>
+                <% end %>
+                <% if wish.price.present? %>
+                  <h5><i class="fa fa-check tick" aria-hidden="true"></i> $ <%= wish.price %></h5>
+                <% end %>
+                <% if wish.material.present? %>
+                  <h5><i class="fa fa-check tick" aria-hidden="true"></i><%= wish.material %></h5>
+                <% end %>
+                <% if wish.color.present? %>
+                  <h5><i class="fa fa-check tick" aria-hidden="true"></i><%= wish.color %></h5>
+                <% end %>
+                <% if wish.description.present? %>
+                  <h5><i class="fa fa-check tick" aria-hidden="true"></i><%= wish.description %></h5>
+                <% end %>
+                <% if wish.gender.present? %>
+                  <h5><i class="fa fa-check tick" aria-hidden="true"></i><%= wish.gender %></h5>
+                <% end %>
               </div>
             </div>
           </div>
         <%end%>
       </div>
     </div>
-  <%end%>
+  <% else %>
+    <br/>
+    <center><br/><h1>Your Wishlist is empty.</h1><br/>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-md-3 col-xs-12">
+          <div class="box" data-toggle="modal" data-target="#preview-<%= wish.id %>">
+          <div class="Title_wish"><center><h3>Wish</h3></center></div>
+          <div class="plus"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
 

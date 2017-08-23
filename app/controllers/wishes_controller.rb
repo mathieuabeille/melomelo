@@ -1,6 +1,6 @@
 class WishesController < ApplicationController
   def index
-    @wishes = Wish.all
+    @wishes = current_user.wishes
   end
 
   def create
