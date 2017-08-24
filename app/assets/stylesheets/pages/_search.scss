@@ -150,6 +150,12 @@
     }
   }
 
+  .dropdown-menu label {
+    cursor: pointer;
+    width: 100%;
+    padding: 5px 10px;
+  }
+
   .gender{
     margin-right: 20px;
 
@@ -183,7 +189,6 @@
     input[type="checkbox"]:checked + label {
       background: #FF9900;
       color: white;
-      margin:0;
       width:100%;
       border-radius:0px !important;
     }
