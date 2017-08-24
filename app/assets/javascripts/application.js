@@ -7,7 +7,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.dropdown-menu li').on('click', function(event) {
+  $('.filters .dropdown-menu li').on('click', function(event) {
     event.stopPropagation();
   });
 });
