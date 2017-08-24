@@ -37,18 +37,15 @@
     <div class="btn-group" role="group" aria-label="...">
 
       <input type="checkbox" id="price-low" name="price[]" value="low" <%= "checked" if params[:price]&.include? "low" %>>
-      <label for="price-low" action="<%= clothes_path %>" method="get" type="button" class="btn btn-default radius-left">
-        <i class="fa fa-usd" aria-hidden= "true" name="low"></i>
+      <label for="price-low" action="<%= clothes_path %>" method="get" type="button" class="btn btn-default radius-left">$0-50
       </label>
 
       <input type="checkbox" id="price-medium" name="price[]" value="middle" <%= "checked"if params[:price]&.include? "middle" %>>
-      <label for="price-medium" type="button" class="btn btn-default">
-        <i class="fa fa-usd" aria-hidden="true"></i><i class="fa fa-usd" aria-hidden="true"></i>
+      <label for="price-medium" type="button" class="btn btn-default">$50-150
       </label>
 
       <input type="checkbox" id="price-high" name="price[]" value="high" <%= "checked" if params[:price]&.include? "high" %>>
-      <label for="price-high" type="button" class="btn btn-default" class="radius-right">
-        <i class="fa fa-usd" aria-hidden="true"></i><i class="fa fa-usd" aria-hidden="true"></i><i class="fa fa-usd" aria-hidden="true"></i>
+      <label for="price-high" type="button" class="btn btn-default" class="radius-right">$150 and over
       </label>
 
     </div>
