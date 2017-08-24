@@ -88,3 +88,28 @@ class AsosScraper
   end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cloth.create(
+      name: "bomber jacket",
+      color: "black",
+      brand: "zara",
+      price: 49.95,
+      material: "leather",
+      images_urls: ["https://static.zara.net/photos///2017/I/0/2/p/1792/303/401/2/w/1920/1792303401_2_1_1.jpg?ts=1502970991746", "https://static.zara.net/photos///2017/I/0/2/p/1792/303/401/2/w/1920/1792303401_1_1_1.jpg?ts=1502971015317"],
+      gender: "men",
+      provider_url: "https://www.zara.com/fr/en/man/jackets/view-all/faux-leather-bomber-jacket-c758501p4625658.html",
+      provider_id: "99999T99",
+    )
