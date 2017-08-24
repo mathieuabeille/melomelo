@@ -25,6 +25,10 @@
     text-shadow: 0.5px 0.5px 0.5px;
     font-size: 60px;
   }
+
+  .fb{
+    display:flex;
+  }
 }
 
 // Small screen
@@ -58,6 +62,10 @@
 
 .facebook {
     width: 300px;
+}
+
+.manually{
+  background-color:#FF9900 !important;
 }
 
 @media (max-width: $screen-md-min) {
