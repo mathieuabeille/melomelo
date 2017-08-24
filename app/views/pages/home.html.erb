@@ -31,19 +31,27 @@
           <div class="text-content">
           <div class="container">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-8">
                 <h1>The <strong class="strong-orange">perfect garment </strong>
                 <br>is one search away</h1></div>
-            <div class="col-sm-6 facebook">
-              <h2>To start a basket</h2>
+            </div>
+            <div class="col-sm-8">
+              <h4>To begin the search</h4>
+            <div class="row signing-up">
+              <div class="col-sm-5">
               <%= link_to user_facebook_omniauth_authorize_path do %>
-              <button class="social-signin facebook"> <i class="fa fa-facebook" aria-hidden="true"></i> Sign up with facebook</button>
-                     <% end %>
-          or
-          <%= link_to "Sign up", new_user_registration_path %> manually</div>
-
-          </div>
-
+                <button class="social-signin facebook"> <i class="fa fa-facebook" aria-hidden="true"></i>  Sign up with facebook</button>
+                <% end %>
+              </div>
+              <div class="col-sm-2">
+              <center> or </center>
+              </div>
+              <div class="col-sm-5">
+                <%= link_to new_user_registration_path do %>
+                <button class="social-signin manually"> <i class="fa fa-sign-in" aria-hidden="true"></i>  Sign up manually</button>
+                <% end %>
+              </div>
+            </div>
         <% end %>
         </div>
     </div>
