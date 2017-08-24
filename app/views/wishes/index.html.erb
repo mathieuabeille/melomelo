@@ -8,7 +8,7 @@
         <% @wishes.each do |wish| %>
           <div class="col-sm-4 col-md-3 col-xs-12">
             <div class="box" data-toggle="modal" data-target="#preview-<%= wish.id %>">
-              <div class="Title_wish"><center><h3>Wish</h3></center></div>
+              <div class="Title_wish"><center><h3> Wish</h3></center></div>
               <div class="description_wish">
                 <% if wish.name.present? %>
                   <h5><i class="fa fa-check tick" aria-hidden="true"></i><%= wish.name %></h5>
