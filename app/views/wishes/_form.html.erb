@@ -9,7 +9,7 @@
               <%= f.input :color %>
               <%= f.input :price %>
               <%= f.input :material %>
-              <%= f.input :gender, collection: ["Men", "Women"], as: :radio_buttons %>
+              <%= f.input :gender, collection: [["Men", "men"], ["Women", "women"]], as: :radio_buttons %>
             </div>
             <div class="form-actions">
               <%= f.button :submit, "Send" %>

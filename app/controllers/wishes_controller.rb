@@ -8,11 +8,10 @@ class WishesController < ApplicationController
       name: params[:name],
       brand: params[:brand],
       color: params[:color],
-      price: params[:price],
+      price: price,
       material: params[:material],
-      gender: params[:gender],
+      gender: gender
     )
-
   end
 
   def create
@@ -51,6 +50,15 @@ class WishesController < ApplicationController
     params.require(:wish).permit(:tags, :color, :gender, :price, :description, :brand, :material, :name)
 
   end
+
+  def price
+    return if params[:price].include?('high')
+    return 150 if params[:price].include?('middle')
+    return 50 if params[:price].include?('low')
+  end
+
+  def gender
+    return 'men' if params[:gender].include?('men')
+    return 'women' if params[:gender].include?('women')
+  end
 end
-
-
