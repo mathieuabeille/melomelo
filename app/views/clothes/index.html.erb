@@ -44,7 +44,8 @@
                     <div class="delete"><%= icon("heart")%></div>
                     <% end %>
 
-                      <div class="price"> <%= cloth.price %>$</div>
+                      <div class="price"><%=cloth.brand%></div>
+                      <div class="brands">$ <%= cloth.price %></div>
                     </div>
 
                   <div class="card-informations">
@@ -78,7 +79,6 @@
                           <p><strong>Name: </strong><%= cloth.name %></p>
                           <p><strong>Brand: </strong><%= cloth.brand %></p>
                           <p><strong>Price: </strong><%= cloth.price %></p>
-                          <p><strong>Size: </strong><%= cloth.sizes.join(", ") %></p>
                           <p><strong>Price: </strong><%= cloth.price %></p>
                           <p><strong>Colors: </strong><%= cloth.color %></p>
                         </div>
