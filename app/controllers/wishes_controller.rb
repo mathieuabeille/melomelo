@@ -52,12 +52,14 @@ class WishesController < ApplicationController
   end
 
   def price
+    return if params[:price]==nil
     return if params[:price].include?('high')
     return 150 if params[:price].include?('middle')
     return 50 if params[:price].include?('low')
   end
 
   def gender
+    return if params[:price]==nil
     return 'men' if params[:gender].include?('men')
     return 'women' if params[:gender].include?('women')
   end
