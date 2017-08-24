@@ -73,17 +73,17 @@ class ClothesFilter
 
   def price_min
     min = 0
-    min = 150 if params[:price].include?("high")
-    min = 50 if params[:price].include?("middle")
-    min = 0 if params[:price].include?("low")
+    min = 150 if params[:price].include?("$150 and over")
+    min = 50 if params[:price].include?("$50-150")
+    min = 0 if params[:price].include?("$0-50")
     min
   end
 
   def price_max
     max = 50
-    max = 50 if params[:price].include?("low")
-    max = 150 if params[:price].include?("middle")
-    max = 99999 if params[:price].include?("high")
+    max = 50 if params[:price].include?("$0-50")
+    max = 150 if params[:price].include?("$50-150")
+    max = 99999 if params[:price].include?("$150 and over")
     max
   end
 end

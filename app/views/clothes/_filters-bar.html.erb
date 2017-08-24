@@ -3,7 +3,7 @@
     <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
     <div class="input-group">
       <div class="input-group-addon" style="width: 50px;"><button type="submit" class="submit"><i class="fa fa-search loupe" aria-hidden="true"></i></button></div>
-      <input type="text" name="name" class="form-control" id="exampleInputAmount" placeholder="Navy Blue Shirt">
+      <input type="text" name="name" class="form-control" id="exampleInputAmount" placeholder="Navy Blue Shirt" value="<%= params[:name] %>">
     </div>
   </div>
 </div>
@@ -36,15 +36,15 @@
   <div class="dollar">
     <div class="btn-group" role="group" aria-label="...">
 
-      <input type="checkbox" id="price-low" name="price[]" value="low" <%= "checked" if params[:price]&.include? "low" %>>
+      <input type="checkbox" id="price-low" name="price[]" value="$0-50" <%= "checked" if params[:price]&.include? "$0-50" %>>
       <label for="price-low" action="<%= clothes_path %>" method="get" type="button" class="btn btn-default radius-left">$0-50
       </label>
 
-      <input type="checkbox" id="price-medium" name="price[]" value="middle" <%= "checked"if params[:price]&.include? "middle" %>>
+      <input type="checkbox" id="price-medium" name="price[]" value="$50-150" <%= "checked"if params[:price]&.include? "$50-150" %>>
       <label for="price-medium" type="button" class="btn btn-default">$50-150
       </label>
 
-      <input type="checkbox" id="price-high" name="price[]" value="high" <%= "checked" if params[:price]&.include? "high" %>>
+      <input type="checkbox" id="price-high" name="price[]" value="$150 and over" <%= "checked" if params[:price]&.include? "$150 and over" %>>
       <label for="price-high" type="button" class="btn btn-default" class="radius-right">$150 and over
       </label>
 

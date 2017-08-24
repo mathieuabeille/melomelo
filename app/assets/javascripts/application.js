@@ -5,3 +5,9 @@
 //= require sweet-alert2-rails
 //= require vendor/smooth-product
 //= require_tree .
+
+$(document).ready(function() {
+  $('.dropdown-menu li').on('click', function(event) {
+    event.stopPropagation();
+  });
+});
