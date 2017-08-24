@@ -213,6 +213,8 @@
   color: white;
 }
 
-.modal-dialog {
-  margin-top: 219px;
+.modal.fade.in {
+  display: flex !important;
+  align-items: center;
+  justify-conten: center;
 }
