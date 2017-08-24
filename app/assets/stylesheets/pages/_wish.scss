@@ -28,16 +28,20 @@
   }
 
   i.fa-plus-circle{
-    font-size: 30px;
+    font-size: 37px;
     color: $orange;
     opacity: 0.8;
+  }
+
+  .Title_wish{
+    padding-top: 5px;
   }
 
   .new-wish-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 100px;
   }
 }
 
