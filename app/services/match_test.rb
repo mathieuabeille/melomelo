@@ -19,34 +19,50 @@ class MatchTest
   def color_match?
     if @wish.color.present? && @cloth.color.present?
       @cloth.color.downcase.include?(@wish.color.downcase)
+    else
+      true
     end
   end
 
   def gender_match?
-    @wish.gender.present? && @cloth.gender.present?
-    @cloth.gender.downcase == @wish.gender.downcase
+    if @wish.gender.present? && @cloth.gender.present?
+      @cloth.gender.downcase == @wish.gender.downcase
+    else
+      true
+    end
   end
 
   def brand_match?
-    @wish.brand.present? && @cloth.brand.present?
-    @cloth.brand.downcase == @wish.brand.downcase
+    if @wish.brand.present? && @cloth.brand.present?
+      @cloth.brand.downcase == @wish.brand.downcase
+    else
+      true
+    end
   end
 
   def price_match?
-    @wish.price.present? && @cloth.price.present?
-    min = @wish.price - 10
-    max = @wish.price + 10
-    (min..max).include?(@cloth.price)
+    if @wish.price.present? && @cloth.price.present?
+      min = @wish.price - 10
+      max = @wish.price + 10
+      (min..max).include?(@cloth.price)
+    else
+      true
+    end
   end
 
   def name_match?
-    @wish.name.present? && @cloth.name.present?
-    @cloth.name.downcase == @wish.name.downcase
+    if @wish.name.present? && @cloth.name.present?
+      @cloth.name.downcase.include?(@wish.name.downcase)
+    else
+      true
+    end
   end
 
   def material_match?
-    @wish.material.present? && @cloth.material.present?
-    @cloth.material.downcase.include?(@wish.material.downcase)
+    if @wish.material.present? && @cloth.material.present?
+      @cloth.material.downcase.include?(@wish.material.downcase)
+    else
+      true
+    end
   end
-
 end
